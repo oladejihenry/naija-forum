@@ -15,6 +15,11 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label value="Username" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label value="Email" />
                 <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>

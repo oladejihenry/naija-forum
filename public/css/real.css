@@ -1,0 +1,89 @@
+.post-create button[type=submit]{
+    font-size: 14px;
+    color: white;
+    padding: 9px 25px;
+    background-color: #7cc341;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+.post-create button[type=submit]:hover{
+    background-color: rgba(37, 37, 37, 0.8);
+}
+.post-create a{
+    color:#fff;
+}
+
+.post-submit button[type=submit]{
+    font-size: 14px;
+    color: white;
+    padding: 9px 25px;
+    background-color: #7cc341;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+.post-submit button[type=submit]:hover{
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.sceditor-container {
+    width: 100% !important;
+    height: 450px !important;
+}
+
+.post-p p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color:#000;
+}
+
+.main-form input[type="text"]{
+    color:#000;
+}
+.single-p{
+    font-size: 17px;
+}
+.single-p p{
+    font-size: 14px;
+    color: #000;
+    text-align: justify;
+}
+.all-edit{
+    font-size:12px;
+    border-top: 1px solid rgb(234, 234, 234);
+    padding: 10px 0;
+    display:flex;
+    border-bottom: 1px solid rgb(234, 234, 234);
+}
+.single-border{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(234, 234, 234); 
+}
+.comment-section{
+    width:100%;
+    background:#fff;
+    margin-top:5px;
+    padding:0 20px;
+    padding-bottom:25px;
+}
+.comment-talk{
+    border-bottom:2px solid rgb(234, 234, 234);
+    display:flex;
+    padding:10px 0;
+}
+.comment-talk a{
+    text-align: right;
+}
+.main-comment p{
+    border: 1px solid #f0f0f0;
+    background-color: #d7e0c9;
+    padding: 25px 15px;
+    border-radius: 10px;
+    font-size: 11px;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
