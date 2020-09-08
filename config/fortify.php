@@ -44,6 +44,8 @@ return [
 
     'username' => 'email',
 
+
+
     /*
     |--------------------------------------------------------------------------
     | Home Path
@@ -91,5 +93,6 @@ return [
         Features::updatePasswords(),
         Features::twoFactorAuthentication(),
     ],
+    
 
 ];
