@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Post;
-use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,11 +23,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $category = Category::findorFail($id);
-        
-        return view('post.create', compact('category'));
+        //
     }
 
     /**
@@ -42,8 +37,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'subject' => 'required|min:20',
-            'body' => 'required|min:20'
+            'body' => 'required|min:5'
         ]);
 
         if ($validator->fails()) {
@@ -52,11 +46,13 @@ class PostController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-
-        $post=auth()->user()->post()->create($request->all());
-
-        $post->categories()->attach($request->categories);
-        return redirect()->route('category', $post->categories()->first());
+   
+        $input = $request->all();
+        $input['user_id'] = auth()->user()->id;
+    
+        Comment::create($input);
+   
+        return back();
     }
 
     /**
@@ -65,9 +61,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        return view('post.single', compact('post'));
+        //
     }
 
     /**
@@ -76,13 +72,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        if(auth()->user()->id != $post->user_id){
-            abort(401, "Please Login");
-        }
-        
-        return view('post.edit', compact('post'));
+        //
     }
 
     /**
@@ -92,23 +84,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'subject' => 'required|min:20',
-            'body' => 'required|min:20'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()
-                        ->back()
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-
-        $post->update($request->all());
-        
-        return redirect()->route('post.update', [$post->slug]);
+        //
     }
 
     /**

@@ -36,3 +36,7 @@ Route::group(['middleware'=>'verified'], function(){
     Route::get('/edit/{post:slug}', 'PostController@edit')->name('post.edit');
     Route::put('/post/{post:slug}', 'PostController@update')->name('post.update');
 });
+
+Route::get('/post/{post:slug}', 'PostController@show')->name('post.show');
+
+Route::post('/comment-store', 'CommentController@store')->name('comments.store');

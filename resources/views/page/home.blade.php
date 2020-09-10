@@ -10,9 +10,9 @@
                 <div style="font-size:12px;color:rgb(88, 88, 88)">{{ now()->format('l, d F Y') }}</div>
             </div>
             <div class="cc-body">
-                
-                <a href="#">  <p style="margin-bottom:15px;">>> Buhari is the worst president out of nigeria <<</p></a>
-               
+                @foreach($posts as $post)
+                <a href="{{ route('post.show',$post->slug) }}">  <p style="margin-bottom:15px;">>> {{ $post->subject }} <<</p></a>
+                @endforeach
             </div>
         </div>
     </div>

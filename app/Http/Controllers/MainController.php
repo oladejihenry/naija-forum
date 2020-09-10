@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\User;
 
 class MainController extends Controller
 {
@@ -13,7 +16,8 @@ class MainController extends Controller
      */
     public function index(Request $request)
     {
-        return view('page.home');
+        $posts = Post::latest()->paginate(15);
+        return view('page.home',compact('posts'));
     }
 
     /**
