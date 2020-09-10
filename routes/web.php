@@ -20,3 +20,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/', 'MainController@index');
+
+Route::group(['prefix' => '/category'], function() {
+    Route::get('/create', 'CategoryController@create');
+    Route::post('/save-category', 'CategoryController@store');
+});
+
+
+
+Route::get('{category:slug}', 'CategoryController@index')->name('category');
+
+Route::group(['middleware'=>'verified'], function(){
+    Route::get('/create/{id}', 'PostController@create')->name('post.create');
+    Route::post('/post-store', 'PostController@store');
+    Route::get('/edit/{post:slug}', 'PostController@edit')->name('post.edit');
+    Route::put('/post/{post:slug}', 'PostController@update')->name('post.update');
+});
