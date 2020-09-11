@@ -1,5 +1,5 @@
 <div class="footer">
-    NAIRALAND 2020
+    Naijaswift Forum 2020
 </div>
 <script type="text/javascript" src="{{asset('js/mobile.js')}}"></script>
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5eff351b1692982c192ff95b" type="text/javascript"  crossorigin="anonymous"></script>

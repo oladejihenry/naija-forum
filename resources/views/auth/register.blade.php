@@ -44,7 +44,7 @@
 <body>
 
 <header>
-    <a style="color:#7cc341" class="logo" href="/"><h2>Logo</h2></a>
+    <a style="color:#7cc341" class="logo" href="/"><h3>Naijaswift Forum</h3></a>
     <nav>
         <ul class="nav__links">
             <li><a href="#">Trending </a></li><p class="chip red">100</p>
@@ -128,7 +128,7 @@
     </div>
 </div>
 <div class="footer">
-    NAIRALAND 2020
+    Naijaswift Forum 2020
 </div>
 <script type="text/javascript" src="{{asset('js/mobile.js')}}"></script>
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5eff351b1692982c192ff95b" type="text/javascript"  crossorigin="anonymous"></script>
