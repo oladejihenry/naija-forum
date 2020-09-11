@@ -21,6 +21,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/', 'MainController@index');
 
+Route::get('/redirects', 'HomeController@index');
+
+Route::get('pub', 'Admin\FirstPageController@index')->name('pub');
+
 Route::group(['prefix' => '/category'], function() {
     Route::get('/create', 'CategoryController@create');
     Route::post('/save-category', 'CategoryController@store');
@@ -40,3 +44,4 @@ Route::group(['middleware'=>'verified'], function(){
 Route::get('/post/{post:slug}', 'PostController@show')->name('post.show');
 
 Route::post('/comment-store', 'CommentController@store')->name('comments.store');
+
