@@ -87,3 +87,6 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
 }
+.lc-body a:hover{
+    color:#7cc341;
+}

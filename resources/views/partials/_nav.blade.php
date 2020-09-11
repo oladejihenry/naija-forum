@@ -1,5 +1,5 @@
 <header>
-    <a style="color:#7cc341" class="logo" href="/"><h2>Logo</h2></a>
+    <a style="color:#7cc341" class="logo" href="/"><img src="" alt="Naijaswift Forum"></a>
     <nav>
         <ul class="nav__links">
             <li><a href="#">Trending </a></li><p class="chip red">100</p>
