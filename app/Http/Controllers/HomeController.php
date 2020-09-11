@@ -18,7 +18,7 @@ class HomeController extends Controller
         $usertype = Auth::user()->usertype;
         $checkrole = explode(',', $usertype);
         if (in_array('admin', $checkrole)) {
-            return redirect()->route('pub');
+            return view('pub.index');
         } else {
             return redirect('/');
         }
