@@ -23,7 +23,8 @@ Route::get('/', 'MainController@index');
 
 Route::get('/redirects', 'HomeController@index');
 
-Route::group(['middleware' => ['auth', 'admin']], function(){
+Route::group(['middleware' => ['auth:sanctum', 'admin','verified']], function(){
+    //Admin Home Page
     Route::get('pub', 'Admin\FirstPageController@index')->name('pub');
 });
 
