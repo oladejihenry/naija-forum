@@ -23,7 +23,11 @@ Route::get('/', 'MainController@index');
 
 Route::get('/redirects', 'HomeController@index');
 
-Route::get('pub', 'Admin\FirstPageController@index')->name('pub');
+Route::group(['middleware' => ['auth', 'admin']], function(){
+    Route::get('pub', 'Admin\FirstPageController@index')->name('pub');
+});
+
+
 
 Route::group(['prefix' => '/category'], function() {
     Route::get('/create', 'CategoryController@create');
