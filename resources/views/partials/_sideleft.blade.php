@@ -8,7 +8,7 @@
             <ul class="accordion">
                 <li>
                     <a class="toggle" href="javascript:void(0);">General <span style="color:#838383;float:right"><i style="font-size:10px" class="fa fa-chevron-down"></i></span></a>
-                    <ul class="inner" style="display:block;">
+                    <ul class="inner">
                     <li><a href="/politics">Politics</a></li>
                     <li><a href="/crime"> Crime </a></li>
                     <li><a href="/romance"> Romance </a></li>
