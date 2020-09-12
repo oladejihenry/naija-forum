@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" type="image/x-icon" href="https://naijaswift.com/img/fav.ico" />
-<link rel="apple-touch-icon" href="https://naijaswift.com/img/naijaswift-Iphone.png">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/fav.ico')}}" />
+  <link rel="apple-touch-icon" href="https://naijaswift.com/img/naijaswift-Iphone.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     @yield('title')
