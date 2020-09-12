@@ -24,7 +24,7 @@
                             $blocks[] = $fragment . "</p>";
                     }
 
-                    array_splice($blocks,2,0,'<div style="float: none; margin:10px 0 10px 0; text-align:center;">  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    array_splice($blocks,2,0,'<div style="float: none; margin:10px 0 10px -12px; text-align:center;">  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Ads 2 -->
                     <ins class="adsbygoogle"
                         style="display:inline-block;width:300px;height:250px"
