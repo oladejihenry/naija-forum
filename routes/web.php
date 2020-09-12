@@ -14,11 +14,6 @@ use App\Http\Controllers\MainController;
 |
 */
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 Route::get('/', 'MainController@index');
 
 Route::get('/redirects', 'HomeController@index');
@@ -26,6 +21,14 @@ Route::get('/redirects', 'HomeController@index');
 Route::group(['middleware' => ['auth:sanctum', 'admin','verified']], function(){
     //Admin Home Page
     Route::get('pub', 'Admin\FirstPageController@index')->name('pub');
+
+    // All Post/ User
+	Route::get('/role-register','Admin\DashboardController@registered');
+	Route::get('/role-edit/{id}', 'Admin\DashboardController@registeredit');
+	Route::delete('/role-delete/{id}', 'Admin\DashboardController@registerdelete');
+	Route::get('/all-posts', 'Admin\DashboardController@getposts');
+	Route::delete('/post-delete/{id}', 'Admin\DashboardController@getpostsdelete');
+	Route::put('role-register-update/{id}', 'Admin\DashboardController@registerupdate');
 });
 
 
