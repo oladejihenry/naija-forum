@@ -48,4 +48,12 @@ class DashboardController extends Controller
 
     	return redirect('/role-register')->with('status', 'Updated');
     }
+
+    public function registerdelete ($id)
+    {
+    	$users = User::findorFail($id);
+    	$users->delete();
+
+    	return redirect('/role-register')->with('status', 'Deleted');
+    }
 }
