@@ -28,7 +28,17 @@ Route::group(['middleware' => ['auth:sanctum', 'admin','verified']], function(){
 	Route::delete('/role-delete/{id}', 'Admin\DashboardController@registerdelete');
 	Route::get('/all-posts', 'Admin\DashboardController@getposts');
 	Route::delete('/post-delete/{id}', 'Admin\DashboardController@getpostsdelete');
-	Route::put('role-register-update/{id}', 'Admin\DashboardController@registerupdate');
+    Route::put('role-register-update/{id}', 'Admin\DashboardController@registerupdate');
+    
+    //Search Admin Users
+    Route::get('/searchadmin', 'Admin\DashboardController@searchadmin')->name('searchadmin');
+
+    //Categories
+    Route::get('/new-tags','Admin\TagsController@index');
+	Route::post('/save-tag','Admin\TagsController@store');
+	Route::get('/role-tagedit/{id}', 'Admin\TagsController@tagedit');
+	Route::delete('/tag-delete/{id}', 'Admin\TagsController@tagdelete');
+	Route::put('role-tag-update/{id}', 'Admin\TagsController@tagupdate');
 });
 
 

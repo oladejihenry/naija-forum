@@ -50,6 +50,12 @@
               <p>All Posts</p>
             </a>
           </li>
+          <li class="{{ 'new-tags' == request()->path() ? 'active' : ''}}">
+            <a href="/new-tags">
+              <i class="now-ui-icons ui-1_bell-53"></i>
+              <p>Categories</p>
+            </a>
+          </li>
           <li class="{{ 'new-news' == request()->path() ? 'active' : ''}}">
             <a href="/new-news">
               <i class="now-ui-icons location_map-big"></i>
@@ -78,12 +84,6 @@
             <a href="/new-tos">
               <i class="now-ui-icons location_map-big"></i>
               <p>Tos</p>
-            </a>
-          </li>
-          <li class="{{ 'new-tags' == request()->path() ? 'active' : ''}}">
-            <a href="/new-tags">
-              <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Tags</p>
             </a>
           </li>
           <li class="{{ 'role-register' == request()->path() ? 'active' : ''}}">
@@ -116,7 +116,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form method="GET" action="" accept-charset="UTF-8">
+            <form method="GET" action="{{ route('searchadmin') }}" accept-charset="UTF-8">
               <div class="input-group no-border">
                 <input type="text" name="query" value="{{ request()->input('query') }}" class="form-control" placeholder="Search...">
                 <div class="input-group-append">

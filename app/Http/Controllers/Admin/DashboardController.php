@@ -56,4 +56,22 @@ class DashboardController extends Controller
 
     	return redirect('/role-register')->with('status', 'Deleted');
     }
+
+    //Admin Search
+
+    public function searchadmin(Request $request)
+    {
+        $query = $request->input('query');
+
+        $search = User::where('name', 'like', "%$query%")->orWhere('username', 'like', "%$query%")->paginate(15);
+        return view('pub.adminsearch-results')->with('search', $search);
+    }
+
+    public function searchpost(Request $request)
+    {
+        $query = $request->input('query');
+
+        $search = News::where('subject', 'like', "%$query%")->orWhere('body', 'like', "%$query%")->paginate(15);
+        return view('pub.user-results')->with('search', $search);
+    }
 }

@@ -17,6 +17,16 @@ $str = '1';
 		<div class="card">
 		  <div class="card-header">
 		    <h4 class="card-title">Registered Users</h4>
+			<form method="GET" action="{{ route('searchadmin') }}" accept-charset="UTF-8">
+              <div class="input-group no-border">
+                <input type="text" name="query" value="{{ request()->input('query') }}" class="form-control" placeholder="Search for users...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
 		  </div>
 		  	<div class="card-body">
 			    <div class="table-responsive">
