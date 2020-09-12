@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth:sanctum', 'admin','verified']], function(){
     //Search Admin Users
     Route::get('/searchadmin', 'Admin\DashboardController@searchadmin')->name('searchadmin');
 
+    //Search Admin Posts
+	Route::get('/searchpost', 'Admin\DashboardController@searchpost')->name('searchpost');
+
     //Categories
     Route::get('/new-tags','Admin\TagsController@index');
 	Route::post('/save-tag','Admin\TagsController@store');

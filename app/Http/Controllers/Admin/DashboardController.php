@@ -71,7 +71,7 @@ class DashboardController extends Controller
     {
         $query = $request->input('query');
 
-        $search = News::where('subject', 'like', "%$query%")->orWhere('body', 'like', "%$query%")->paginate(15);
+        $search = Post::where('subject', 'like', "%$query%")->orWhere('body', 'like', "%$query%")->paginate(15);
         return view('pub.user-results')->with('search', $search);
     }
 }
