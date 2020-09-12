@@ -11,7 +11,7 @@
             </div>
             <div class="cc-body">
                 @foreach($posts as $post)
-                <a href="{{ route('post.show',$post->slug) }}">  <p style="margin-bottom:15px;">>> {{ $post->subject }} <<</p></a>
+                <a href="{{ route('post.show',$post->slug) }}">  <p style="margin-bottom:15px;"> {{ $post->subject }} </p></a>
                 @endforeach
             </div>
         </div>
