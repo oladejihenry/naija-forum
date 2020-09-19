@@ -23,4 +23,28 @@ class TagsController extends Controller
     	$category->save();
     	return redirect('/new-tags')->with('success', 'Updated');
     }
+    public function tagedit(Request $request, $id)
+    {
+    	$tags = Tags::findorFail($id);
+    	return view('pub.tag-edit')->with('tags',$tags);
+    }
+
+    public function tagupdate(Request $request, $id)
+    {
+    	$tags = Tags::find($id);
+    	$tags->name = $request->input('name');
+    	$tags->url = $request->input('url');
+    	$tags->update();
+
+    	return redirect('/new-tags')->with('status', 'Updated');
+    }
+
+
+    public function tagdelete ($id)
+    {
+    	$tags = Tags::findorFail($id);
+    	$tags->delete();
+
+    	return redirect('/new-tags')->with('status', 'Deleted');
+    }
 }
