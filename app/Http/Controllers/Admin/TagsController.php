@@ -25,13 +25,13 @@ class TagsController extends Controller
     }
     public function tagedit(Request $request, $id)
     {
-    	$tags = Tags::findorFail($id);
+    	$tags = Category::findorFail($id);
     	return view('pub.tag-edit')->with('tags',$tags);
     }
 
     public function tagupdate(Request $request, $id)
     {
-    	$tags = Tags::find($id);
+    	$tags = Category::find($id);
     	$tags->name = $request->input('name');
     	$tags->url = $request->input('url');
     	$tags->update();
@@ -42,7 +42,7 @@ class TagsController extends Controller
 
     public function tagdelete ($id)
     {
-    	$tags = Tags::findorFail($id);
+    	$tags = Category::findorFail($id);
     	$tags->delete();
 
     	return redirect('/new-tags')->with('status', 'Deleted');
