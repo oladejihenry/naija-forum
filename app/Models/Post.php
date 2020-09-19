@@ -9,10 +9,11 @@ use Spatie\Sluggable\SlugOptions;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Post extends Model
+class Post extends Model implements Viewable
 {
     use HasFactory;
     use HasSlug;
+    use InteractsWithViews;
     protected $fillable=['subject','body','image_1','image_2','image_3'];
 
     public function categories()

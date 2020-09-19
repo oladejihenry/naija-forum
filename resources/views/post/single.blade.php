@@ -13,6 +13,7 @@
                     <h3 style="margin-bottom:15px; color:#000">{{$post->subject}}</h3>
                     <p>By {{$post->user->username}} | 
                         <em>Posted: {{ $post->getTimeAgo($post->created_at) }}</em> | 
+                        <em>{{views($post)->unique()->count()}} Views</em> |
                         <em><a href="{{route('category', ['category'=>$post->categories()->first()->slug])}}">{{ $post->categories()->first()->name }}</a></em>
                     </p>
                 </div>
